@@ -8,10 +8,11 @@ using Xamarin.Forms;
 
 namespace MyApp
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage
     {
         public MainPage()
         {
+            BindingContext = new MainPageViewModel();
             InitializeComponent();
         }
     }
