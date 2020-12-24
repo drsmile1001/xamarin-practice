@@ -1,19 +1,20 @@
-﻿using System;
+﻿using ReactiveUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Reactive;
+using System.Reactive.Concurrency;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace MyApp
 {
-    public class MainPageViewModel : INotifyPropertyChanged
+    public class MainPageViewModel : ReactiveObject
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
         public MainPageViewModel()
         {
-            Add = new Command(() =>
+            Add = ReactiveCommand.Create(() => 
             {
                 Count += 1;
             });
@@ -24,13 +25,9 @@ namespace MyApp
         public int Count
         {
             get => _count;
-            set {
-                if (value == _count) return;
-                _count = value;
-                PropertyChanged(this, new PropertyChangedEventArgs(nameof(Count)));
-            }
+            set => this.RaiseAndSetIfChanged(ref _count, value);
         }
 
-        public ICommand Add { get; }
+        public ReactiveCommand<Unit, Unit> Add { get; }
     }
 }
