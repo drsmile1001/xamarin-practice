@@ -27,5 +27,10 @@
                 <views:LayoutGridLayout />
             </ShellContent>
         </Tab>
+        <Tab Title="Display Collections">
+            <ShellContent Title="CollectionView">
+                <views:CollectionCollectionView />
+            </ShellContent>
+        </Tab>
     </FlyoutItem>
 </Shell>
