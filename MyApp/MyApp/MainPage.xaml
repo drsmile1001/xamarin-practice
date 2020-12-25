@@ -4,12 +4,14 @@
              x:Class="MyApp.MainPage">
 
     <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="{Binding Count}"
+        <Label Text="{Binding Count}"
                    HorizontalTextAlignment="Center"
-                   TextColor="White"
+                   TextColor="Black"
                    FontSize="36"/>
-        </Frame>
+        <Label Text="{Binding DoubleValue}"
+                   HorizontalTextAlignment="Center"
+                   TextColor="Black"
+                   FontSize="36"/>
         <Button Text="+1"
                 Command="{Binding Add}"/>
     </StackLayout>
