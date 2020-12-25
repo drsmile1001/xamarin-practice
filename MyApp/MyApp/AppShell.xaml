@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:MyApp.Views"
+       x:Class="MyApp.AppShell">
+    <FlyoutItem Title="Flyout Items"
+                FlyoutDisplayOptions="AsMultipleItems">
+        <Tab Title="Tab 1">
+            <ShellContent Title="Counter">
+                <views:Counter />
+            </ShellContent>
+            <ShellContent Title="Shell Content 1">
+                <views:ShellPage1 />
+            </ShellContent>
+            <ShellContent Title="Shell Content 2">
+                <views:ShellPage2 />
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+</Shell>

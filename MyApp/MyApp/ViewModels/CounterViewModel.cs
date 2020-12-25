@@ -9,13 +9,13 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace MyApp
+namespace MyApp.ViewModels
 {
-    public class MainPageViewModel : ReactiveObject
+    public class CounterViewModel : ReactiveObject
     {
-        public MainPageViewModel()
+        public CounterViewModel()
         {
-            Add = ReactiveCommand.Create(() => 
+            Add = ReactiveCommand.Create(() =>
             {
                 Count += 1;
             });

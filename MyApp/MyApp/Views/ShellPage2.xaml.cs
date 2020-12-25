@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 
-namespace MyApp
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace MyApp.Views
 {
-    public partial class MainPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class ShellPage2 : ContentPage
     {
-        public MainPage()
+        public ShellPage2()
         {
-            BindingContext = new MainPageViewModel();
             InitializeComponent();
         }
     }
