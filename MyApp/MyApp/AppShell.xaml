@@ -16,5 +16,10 @@
                 <views:ShellPage2 />
             </ShellContent>
         </Tab>
+        <Tab Title="Layouts">
+            <ShellContent Title="StackLayout">
+                <views:LayoutStackLayout />
+            </ShellContent>
+        </Tab>
     </FlyoutItem>
 </Shell>

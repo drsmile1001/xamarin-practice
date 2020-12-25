@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyApp.Views.LayoutStackLayout">
+    <StackLayout Margin="20"
+                 Spacing="30">
+        <Label Text="Primary colors" />
+        <BoxView Color="Red" />
+        <BoxView Color="Yellow" />
+        <BoxView Color="Blue" />
+        <Label Text="Secondary colors" />
+        <BoxView Color="Green" />
+        <BoxView Color="Orange" />
+        <BoxView Color="Purple" />
+        <Label Text="Left"
+               HorizontalOptions="Start"/>
+        <Label Text="Right"
+               HorizontalOptions="End"/>
+        <Label Text="Center"
+               HorizontalOptions="Center"/>
+    </StackLayout>
+</ContentPage>
