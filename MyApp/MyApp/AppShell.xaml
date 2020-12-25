@@ -20,6 +20,12 @@
             <ShellContent Title="StackLayout">
                 <views:LayoutStackLayout />
             </ShellContent>
+            <ShellContent Title="AbsoluteLayout">
+                <views:LayoutAbsoluteLayout />
+            </ShellContent>
+            <ShellContent Title="GridLayout">
+                <views:LayoutGridLayout />
+            </ShellContent>
         </Tab>
     </FlyoutItem>
 </Shell>

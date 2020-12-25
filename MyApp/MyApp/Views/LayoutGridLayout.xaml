@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyApp.Views.LayoutGridLayout">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0"
+               Grid.Column="0"
+               Grid.ColumnSpan="2"
+               Text="r0c0 - r0c1"
+               BackgroundColor="Red"
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="Center"
+               FontSize="Large"/>
+        <Label Grid.Row="1"
+               Grid.Column="0"
+               Text="r1c0"
+               BackgroundColor="LightBlue"
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="Center"
+               FontSize="Large"/>
+        <Label Grid.Row="1"
+               Grid.Column="1"
+               Text="r1c1"
+               BackgroundColor="LightGreen"
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="Center"
+               FontSize="Large"/>
+    </Grid>
+</ContentPage>
