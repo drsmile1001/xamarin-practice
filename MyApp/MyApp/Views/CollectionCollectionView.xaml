@@ -10,7 +10,7 @@
         <Label Text="Title" />
         <CollectionView Grid.Row="1"
                         Grid.Column="0"
-            ItemsSource="{Binding Items}">
+            ItemsSource="{Binding People}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Frame Padding="10">
