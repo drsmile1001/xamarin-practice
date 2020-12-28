@@ -16,11 +16,8 @@ namespace MyApp.Views
     {
         public CollectionCollectionView()
         {
+            BindingContext = new CollectionCollectionViewViewModel();
             InitializeComponent();
-            var vm = new CollectionCollectionViewViewModel();
-            BindingContext = vm;
-            vm.AddOrUpdatePerson("Aclie", 23);
-            vm.AddAge("Aclie", 1.5);
         }
     }
 }

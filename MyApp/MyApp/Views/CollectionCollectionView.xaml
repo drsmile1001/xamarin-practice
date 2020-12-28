@@ -1,33 +1,78 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MyApp.Views.CollectionCollectionView">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Label Text="Title" />
-        <CollectionView Grid.Row="1"
+             x:Class="MyApp.Views.CollectionCollectionView"
+             x:Name="Page">
+    <AbsoluteLayout>
+        <Grid AbsoluteLayout.LayoutBounds="0,0,1,1"
+              AbsoluteLayout.LayoutFlags="SizeProportional"
+              BackgroundColor="Gray">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Button Text="Add"
+                    Command="{Binding AddNewPerson}"/>
+            <CollectionView Grid.Row="1"
                         Grid.Column="0"
             ItemsSource="{Binding People}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Frame Padding="10">
-                        <Grid BackgroundColor="Pink"
-                              Padding="10">
-                            <Grid.RowDefinitions>
-                                <RowDefinition  />
-                                <RowDefinition  />
-                            </Grid.RowDefinitions>
-                            <Label Text="{Binding Name}"/>
-                            <Label Grid.Row="1"
-                                   Text="{Binding Age}"
-                                   HorizontalTextAlignment="End"/>
-                        </Grid>
-                    </Frame>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </Grid>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="10">
+                            <Frame BorderColor="Black"
+                               CornerRadius="20">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition  />
+                                        <RowDefinition  />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition Width="60"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding ID}"/>
+                                    <Label Grid.Row="1"
+                                           Text="{Binding Name}" />
+                                    <Button Grid.Column="1"
+                                            Grid.RowSpan="2"
+                                            Text="編輯"
+                                            CornerRadius="10"
+                                            Command="{Binding Source={x:Reference Page}, Path=BindingContext.EditPerson}"
+                                            CommandParameter="{Binding ID}"/>
+                                    <Button Grid.Column="2"
+                                        Grid.RowSpan="2"
+                                        Text="刪除"
+                                        CornerRadius="10"
+                                        Command="{Binding Source={x:Reference Page}, Path=BindingContext.DeletePerson}"
+                                        CommandParameter="{Binding ID}"
+                                            />
+                                </Grid>
+                            </Frame>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+        <Frame AbsoluteLayout.LayoutBounds="0.5,0.5,1,-1"
+               AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+               IsVisible="{Binding ShowEditingID}"
+               Padding="20">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Label Text="{Binding EditingID}"
+                       FontSize="Large"/>
+                <Entry Grid.Row="1"
+                       Text="{Binding EditingPerson.Name}" />
+                <Button Grid.Row="2"
+                        Command="{Binding EditPerson}"
+                        CommandParameter="{Null}"
+                        Text="close"/>
+            </Grid>
+        </Frame>
+    </AbsoluteLayout>
 </ContentPage>
