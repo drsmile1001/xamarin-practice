@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rxui:ReactiveContentView xmlns="http://xamarin.com/schemas/2014/forms"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                          xmlns:rxui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+                          xmlns:m="clr-namespace:MyApp.Models"
+                          x:Class="MyApp.Views.PersonView"
+                          x:TypeArguments="m:PersonModel">
+    <Grid BackgroundColor="Red">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label x:Name="TheIDLabel"
+               FontSize="Large"
+               Text="{Binding ID}"/>
+        <Label x:Name="TheNameLabel"
+               Grid.Row="1"
+               Text="{Binding Name}"/>
+    </Grid>
+</rxui:ReactiveContentView>

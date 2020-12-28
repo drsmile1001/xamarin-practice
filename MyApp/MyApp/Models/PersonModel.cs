@@ -1,6 +1,6 @@
 ﻿using ReactiveUI;
 
-namespace MyApp.ViewModels
+namespace MyApp.Models
 {
     public class PersonModel : ReactiveObject
     {

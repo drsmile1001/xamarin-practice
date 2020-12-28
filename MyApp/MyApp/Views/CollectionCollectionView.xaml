@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:view="clr-namespace:MyApp.Views"
+             xmlns:m="clr-namespace:MyApp.Models"
              x:Class="MyApp.Views.CollectionCollectionView"
              x:Name="Page">
     <AbsoluteLayout>
@@ -14,39 +16,30 @@
             <Button Text="Add"
                     Command="{Binding AddNewPerson}"/>
             <CollectionView Grid.Row="1"
-                        Grid.Column="0"
-            ItemsSource="{Binding People}">
+                            Grid.Column="0"
+                            ItemsSource="{Binding People}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Frame Padding="10">
                             <Frame BorderColor="Black"
                                CornerRadius="20">
                                 <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition  />
-                                        <RowDefinition  />
-                                    </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition/>
                                         <ColumnDefinition Width="60"/>
                                         <ColumnDefinition Width="60"/>
                                     </Grid.ColumnDefinitions>
-                                    <Label Text="{Binding ID}"/>
-                                    <Label Grid.Row="1"
-                                           Text="{Binding Name}" />
+                                    <view:PersonView ViewModel="{Binding Source={RelativeSource AncestorType={x:Type m:PersonModel}}}" />
                                     <Button Grid.Column="1"
-                                            Grid.RowSpan="2"
                                             Text="編輯"
                                             CornerRadius="10"
                                             Command="{Binding Source={x:Reference Page}, Path=BindingContext.EditPerson}"
-                                            CommandParameter="{Binding ID}"/>
+                                            CommandParameter="{Binding ID}" />
                                     <Button Grid.Column="2"
-                                        Grid.RowSpan="2"
-                                        Text="刪除"
-                                        CornerRadius="10"
-                                        Command="{Binding Source={x:Reference Page}, Path=BindingContext.DeletePerson}"
-                                        CommandParameter="{Binding ID}"
-                                            />
+                                            Text="刪除"
+                                            CornerRadius="10"
+                                            Command="{Binding Source={x:Reference Page}, Path=BindingContext.DeletePerson}"
+                                            CommandParameter="{Binding ID}" />
                                 </Grid>
                             </Frame>
                         </Frame>
