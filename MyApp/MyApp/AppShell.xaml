@@ -9,8 +9,8 @@
             <ShellContent Title="Counter">
                 <views:Counter />
             </ShellContent>
-            <ShellContent Title="Shell Content 1">
-                <views:ShellPage1 />
+            <ShellContent Title="No Xaml Test">
+                <views:NoXamlTest />
             </ShellContent>
             <ShellContent Title="Shell Content 2">
                 <views:ShellPage2 />
